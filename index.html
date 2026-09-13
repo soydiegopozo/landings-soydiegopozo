@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rescate de Ads para Agencias de Viajes</title>
+<meta name="description" content="Descubre en 48 horas dónde se está quemando el presupuesto publicitario de tu agencia de viajes. Auditoría enfocada en detectar fugas y darte un plan de acción claro.">
+
+<!-- Pega aquí tu Meta Pixel -->
+<!-- Pega aquí tu Google tag (gtag.js) -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --green:#4CAF17;
+    --green-light:#7ED321;
+    --bg-dark:#0A0D08;
+    --bg-soft:#F2F7ED;
+    --bg-white:#FFFFFF;
+    --text-dark:#12140F;
+    --text-light:#F6F8F3;
+    --muted-dark:#5B6157;
+    --muted-light:#C7D1BE;
+    --radius:14px;
+    --max:900px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Montserrat',Arial,Helvetica,sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-white);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 22px;}
+  h1,h2,h3{font-weight:800;line-height:1.18;letter-spacing:-0.01em;}
+  p{line-height:1.7;}
+  .kicker{
+    display:inline-block;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    padding:7px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .kicker--on-dark{background:rgba(126,211,33,0.14);color:var(--green-light);border:1px solid rgba(126,211,33,0.35);}
+  .kicker--on-light{background:rgba(76,175,23,0.1);color:#2E7D0A;border:1px solid rgba(76,175,23,0.25);}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:inherit;
+    font-weight:700;
+    font-size:16px;
+    text-decoration:none;
+    padding:18px 32px;
+    border-radius:999px;
+    border:none;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+    text-align:center;
+  }
+  .btn--primary{
+    background:linear-gradient(135deg,var(--green-light),var(--green));
+    color:#08140A;
+    box-shadow:0 10px 30px -8px rgba(76,175,23,0.55);
+  }
+  .btn--primary:hover{box-shadow:0 14px 34px -6px rgba(76,175,23,0.7);transform:translateY(-1px);}
+  .btn-note{font-size:12.5px;margin-top:10px;opacity:0.75;display:block;text-align:center;}
+
+  section{padding:60px 0;}
+  .section-soft{background:var(--bg-soft);}
+  .section-white{background:var(--bg-white);}
+  .section-dark{background:var(--bg-dark);color:var(--text-light);}
+  .section-head{max-width:640px;margin:0 auto 36px;text-align:center;}
+  .section-head h2{font-size:clamp(24px,5.5vw,32px);}
+  .section-dark .muted, .muted-light{color:var(--muted-light);}
+  .muted-dark{color:var(--muted-dark);}
+
+  /* HERO */
+  .hero{
+    background:
+      radial-gradient(120% 100% at 12% 15%, rgba(126,211,33,0.5) 0%, rgba(76,175,23,0.0) 45%),
+      linear-gradient(120deg,#3E7A0B 0%, #142807 42%, #0A0D08 78%);
+    color:var(--text-light);
+    padding:64px 0 54px;
+    text-align:center;
+  }
+  .hero .wrap{max-width:760px;}
+  .hero h1{font-size:clamp(26px,7vw,42px);margin-bottom:18px;}
+  .hero .sub{font-size:17px;color:var(--muted-light);margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto;}
+
+  /* Checklist desbloqueos */
+  .unlock-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
+  .unlock-item{background:var(--bg-white);border:1px solid #E7EDE0;border-radius:var(--radius);padding:20px 22px;}
+  .unlock-item h3{font-size:16.5px;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+  .unlock-item p{font-size:14.5px;color:var(--muted-dark);}
+
+  /* Agitación (sales letter rhythm) */
+  .agitate{max-width:600px;margin:0 auto;text-align:center;}
+  .agitate .headline{font-size:clamp(20px,4.5vw,26px);font-weight:800;margin-bottom:28px;line-height:1.35;}
+  .agitate p{font-size:16px;color:var(--muted-light);margin-bottom:6px;}
+  .agitate p.gap{margin-bottom:22px;}
+  .agitate p.strong{color:var(--text-light);font-weight:700;font-size:17px;margin:22px 0 6px;}
+
+  /* Para quién */
+  .for-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+  .for-item{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--text-dark);}
+  .for-item .dot{flex:0 0 auto;width:8px;height:8px;border-radius:50%;background:var(--green);margin-top:8px;}
+
+  /* Comprando */
+  .buying{max-width:560px;margin:0 auto;text-align:center;}
+  .buying p{font-size:16.5px;color:var(--muted-dark);margin-bottom:8px;}
+  .buying p.big{font-size:22px;font-weight:800;color:var(--text-dark);margin:10px 0;}
+
+  /* 3 pasos esperar */
+  .expect-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:820px;margin:0 auto;}
+  .expect-card{background:rgba(255,255,255,0.04);border:1px solid rgba(246,248,243,0.14);border-radius:var(--radius);padding:24px 22px;}
+  .expect-num{font-size:13px;font-weight:800;color:#08140A;background:var(--green-light);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .expect-card h3{font-size:16.5px;margin-bottom:8px;color:var(--text-light);}
+  .expect-card p{font-size:14.5px;color:var(--muted-light);}
+
+  /* Bonos */
+  .bonus-list{display:flex;flex-direction:column;gap:18px;max-width:720px;margin:0 auto;}
+  .bonus-card{border:1.5px solid #E7EDE0;border-radius:var(--radius);padding:24px 22px;background:var(--bg-white);}
+  .bonus-card h3{font-size:16px;margin-bottom:8px;}
+  .bonus-card p{font-size:14.5px;color:var(--muted-dark);}
+
+  /* Haz cuentas */
+  .haz-cuentas{max-width:600px;margin:0 auto;text-align:center;}
+  .haz-cuentas p{font-size:16px;color:var(--muted-dark);margin-bottom:10px;}
+  .haz-cuentas p.strong{font-weight:700;color:var(--text-dark);}
+
+  /* Precio */
+  .price-box{
+    max-width:600px;margin:0 auto;text-align:center;
+  }
+  .price-box .tag{font-size:15px;color:var(--muted-light);margin-bottom:8px;}
+  .price-box .amount{font-size:clamp(40px,10vw,56px);font-weight:900;color:var(--green-light);margin-bottom:22px;}
+  .price-box .amount sup{font-size:0.4em;font-weight:700;margin-left:4px;color:var(--muted-light);}
+
+  /* Resumen / orden */
+  .summary-card{
+    max-width:520px;margin:0 auto;
+    background:var(--bg-white);
+    border:1.5px solid var(--green);
+    border-radius:18px;
+    padding:32px 26px;
+    box-shadow:0 20px 40px -18px rgba(76,175,23,0.4);
+  }
+  .summary-card h3{font-size:15px;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted-dark);margin-bottom:18px;text-align:center;}
+  .summary-list{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:22px;}
+  .summary-list li{font-size:14.5px;padding-left:24px;position:relative;color:var(--text-dark);}
+  .summary-list li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800;}
+  .summary-list li.bonus:before{content:"🎁";}
+  .summary-price{text-align:center;font-size:32px;font-weight:900;margin-bottom:20px;}
+  .summary-price span{display:block;font-size:13px;font-weight:600;color:var(--muted-dark);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;}
+
+  /* FAQ */
+  .faq-list{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+  .faq-item{background:var(--bg-white);border:1px solid #E7EDE0;border-radius:var(--radius);padding:20px 22px;}
+  .faq-item h3{font-size:15.5px;margin-bottom:8px;}
+  .faq-item p{font-size:14px;color:var(--muted-dark);}
+
+  /* Cierre final */
+  .final-cta{
+    background:
+      radial-gradient(120% 140% at 85% 20%, rgba(126,211,33,0.5) 0%, rgba(76,175,23,0) 50%),
+      linear-gradient(120deg,#0A0D08 0%, #142807 55%, #3E7A0B 100%);
+    color:var(--text-light);
+    text-align:center;
+    padding:64px 0;
+  }
+  .final-cta .wrap{max-width:560px;}
+  .final-cta p{color:var(--muted-light);margin-bottom:6px;font-size:15.5px;}
+  .final-cta p.strong{color:var(--text-light);font-weight:700;font-size:17px;margin:18px 0 26px;}
+
+  footer{
+    background:var(--bg-dark);
+    color:var(--muted-light);
+    text-align:center;
+    padding:28px 22px 34px;
+    font-size:12.5px;
+  }
+  footer a{color:var(--green-light);text-decoration:none;}
+
+  @media (min-width:720px){
+    section{padding:88px 0;}
+    .unlock-list{flex-direction:row;flex-wrap:wrap;}
+    .unlock-item{flex:1 1 calc(50% - 8px);min-width:260px;}
+    .expect-grid{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker kicker--on-dark">RESCATE DE ADS PARA AGENCIAS DE VIAJES</span>
+    <h1>Descubre en 48 horas dónde se está quemando tu presupuesto publicitario</h1>
+    <p class="sub">Sin aumentar tu inversión, sin rehacer toda tu estrategia, sin seguir lanzando anuncios a ciegas. Solo una auditoría brutal de tus campañas para detectar qué está frenando tus resultados — incluso si llevas meses invirtiendo en publicidad.</p>
+    <!-- TODO Diego: reemplaza este href con tu link de checkout/calendario real -->
+    <a href="#checkout-pendiente" class="btn btn--primary">Quiero rescatar mi presupuesto</a>
+  </div>
+</section>
+
+<!-- ===== QUÉ DESBLOQUEARÁS ===== -->
+<section class="section-white">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker kicker--on-light">¿Qué desbloquearás?</span>
+    </div>
+    <div class="unlock-list">
+      <div class="unlock-item">
+        <h3>✅ Radiografía de tus campañas</h3>
+        <p>Descubre qué campañas están consumiendo presupuesto sin aportar resultados y recupera la sensación de tener el control sobre tu inversión.</p>
+      </div>
+      <div class="unlock-item">
+        <h3>✅ Detector de fugas de presupuesto</h3>
+        <p>Identifica dónde estás pagando por clics, leads o consultas que no terminan acercándose a una reserva.</p>
+      </div>
+      <div class="unlock-item">
+        <h3>✅ Análisis de tus anuncios</h3>
+        <p>Descubre qué mensajes, creatividades y ofertas están atrayendo al viajero equivocado o no consiguen suficiente intención de compra.</p>
+      </div>
+      <div class="unlock-item">
+        <h3>✅ Mapa de optimización</h3>
+        <p>Obtén una lista clara de qué mantener, qué detener y qué probar para dejar de tomar decisiones basadas en intuición.</p>
+      </div>
+      <div class="unlock-item">
+        <h3>✅ Plan de acción de 48 horas</h3>
+        <p>Sal de la auditoría sabiendo exactamente cuáles son los siguientes movimientos que deberías priorizar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AGITACIÓN ===== -->
+<section class="section-dark">
+  <div class="wrap agitate">
+    <p class="headline">Tu agencia no necesita más tráfico. Necesita dejar de perder el que ya estás pagando.</p>
+    <p class="gap">Piénsalo.</p>
+    <p>Cada día tus campañas siguen activas.</p>
+    <p>Cada día entra dinero en Meta.</p>
+    <p class="gap">Y cada día puedes estar pagando por personas que hacen clic, preguntan un precio, escriben por WhatsApp... y desaparecen.</p>
+    <p>Entonces miras el administrador de anuncios.</p>
+    <p>CTR. CPC. CPM. Leads.</p>
+    <p class="gap">Todo parece tener una explicación. Pero las reservas no aparecen.</p>
+    <p class="strong">Y ahí empieza el infierno.</p>
+    <p>Cambias el anuncio. Cambias la segmentación.</p>
+    <p>Subes el presupuesto. Bajas el presupuesto.</p>
+    <p class="gap">Duplicas la campaña. Pruebas otra creatividad. Y vuelves a esperar.</p>
+    <p class="gap">Mientras tanto, tu tarjeta sigue cobrando.</p>
+    <p class="strong">El problema no siempre es que necesites más publicidad.</p>
+    <p class="gap">Muchas veces el problema es que hay una fuga en alguna parte de lo que ya estás haciendo. Y si no sabes dónde está esa fuga, aumentar el presupuesto solo significa una cosa: vas a perder dinero más rápido.</p>
+    <p>Por eso creé Rescate de Ads para Agencias de Viajes.</p>
+    <p class="gap">Una auditoría enfocada específicamente en descubrir qué está frenando el rendimiento de tus campañas y convertir ese caos de métricas en decisiones concretas.</p>
+    <p>No necesitas otra explicación de por qué Meta Ads es importante. Ya lo sabes. Ya estás pagando.</p>
+    <p class="strong">Lo que necesitas es saber: ¿Dónde se está yendo mi dinero? Y, sobre todo: ¿Qué tengo que cambiar ahora?</p>
+  </div>
+</section>
+
+<!-- ===== PARA QUIÉN ===== -->
+<section class="section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker kicker--on-light">¿Para quién es esto?</span>
+    </div>
+    <div class="for-list">
+      <div class="for-item"><span class="dot"></span><p>Para dueños de agencias de viajes que ya invierten en publicidad y sienten que el retorno no acompaña la inversión.</p></div>
+      <div class="for-item"><span class="dot"></span><p>Para agencias que reciben clics, leads o consultas, pero no consiguen convertir ese movimiento en suficientes reservas.</p></div>
+      <div class="for-item"><span class="dot"></span><p>Para propietarios cansados de mirar métricas sin entender qué decisión tomar.</p></div>
+      <div class="for-item"><span class="dot"></span><p>Para quienes ya probaron diferentes anuncios, públicos o presupuestos y siguen sin encontrar consistencia.</p></div>
+      <div class="for-item"><span class="dot"></span><p>Para empresarios que quieren saber qué está fallando antes de seguir poniendo más dinero.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LO QUE REALMENTE ESTÁS COMPRANDO ===== -->
+<section class="section-white">
+  <div class="wrap buying">
+    <span class="kicker kicker--on-light">Lo que realmente estás comprando</span>
+    <p>No estás comprando otro reporte lleno de gráficos.</p>
+    <p class="big">Estás comprando claridad.</p>
+    <p>La claridad de saber qué está funcionando, qué está desperdiciando presupuesto y cuáles son los próximos movimientos que merecen tu dinero.</p>
+  </div>
+</section>
+
+<!-- ===== QUÉ PUEDES ESPERAR ===== -->
+<section class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker kicker--on-dark">¿Qué puedes esperar?</span>
+    </div>
+    <div class="expect-grid">
+      <div class="expect-card">
+        <span class="expect-num">1</span>
+        <h3>Dejar de adivinar</h3>
+        <p>Entenderás dónde están los principales puntos débiles de tus campañas y qué deberías revisar primero.</p>
+      </div>
+      <div class="expect-card">
+        <span class="expect-num">2</span>
+        <h3>Proteger tu presupuesto</h3>
+        <p>Detectarás posibles fugas que pueden estar haciendo que pagues por tráfico o consultas que no generan suficiente valor comercial.</p>
+      </div>
+      <div class="expect-card">
+        <span class="expect-num">3</span>
+        <h3>Saber qué hacer después</h3>
+        <p>Terminarás con prioridades claras para optimizar tus campañas en lugar de seguir cambiando cosas al azar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BONOS ===== -->
+<section class="section-white">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker kicker--on-light">Bonos exclusivos</span>
+    </div>
+    <div class="bonus-list">
+      <div class="bonus-card">
+        <h3>🎁 Bono #1 — Mapa de Fugas Publicitarias</h3>
+        <p>Una revisión orientada a encontrar los puntos donde tu presupuesto puede estar perdiendo fuerza. Porque no sirve de nada conseguir 100 consultas si 90 nunca llegan a una conversación comercial seria. Este mapa te ayuda a mirar el recorrido completo y detectar dónde empezar a intervenir.</p>
+      </div>
+      <div class="bonus-card">
+        <h3>🎁 Bono #2 — Checklist de Campañas Rentables</h3>
+        <p>Una lista práctica para revisar tus campañas sin perder horas navegando entre métricas. Qué mirar. Qué comparar. Qué señales deberían hacerte levantar una ceja. Y qué errores no deberías seguir ignorando.</p>
+      </div>
+      <div class="bonus-card">
+        <h3>🎁 Bono #3 — Plan de Acción Prioritario</h3>
+        <p>No vas a recibir una montaña de recomendaciones para después no hacer ninguna. Recibirás una priorización de acciones para saber qué atacar primero. Porque 27 cambios simultáneos no son estrategia. Son pánico con acceso al Administrador de Anuncios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HAZ CUENTAS ===== -->
+<section class="section-soft">
+  <div class="wrap haz-cuentas">
+    <span class="kicker kicker--on-light">Haz cuentas...</span>
+    <p>Si contrataras una consultoría especializada para analizar tus campañas, embudos y adquisición, fácilmente podrías terminar pagando cientos o incluso miles por un diagnóstico.</p>
+    <p>Y aun así, podrías recibir un informe que termina olvidado en una carpeta.</p>
+    <p class="strong">Y un informe que no se convierte en decisiones no vale absolutamente nada.</p>
+    <p>Por eso Rescate de Ads para Agencias de Viajes está diseñado para darte algo mucho más útil: detectar el problema y saber qué hacer con él.</p>
+  </div>
+</section>
+
+<!-- ===== PRECIO ===== -->
+<section class="section-dark">
+  <div class="wrap price-box">
+    <p class="tag">🔒 Hoy puedes acceder al Rescate por solo</p>
+    <p class="amount">$297<sup>MXN</sup></p>
+  </div>
+</section>
+
+<!-- ===== RESUMEN / ORDEN ===== -->
+<section class="section-white" id="oferta">
+  <div class="wrap">
+    <div class="summary-card">
+      <h3>Resumen de lo que te llevas</h3>
+      <ul class="summary-list">
+        <li>Rescate de Ads para Agencias de Viajes — auditoría enfocada en detectar qué está frenando tus campañas</li>
+        <li>Radiografía de campañas — para identificar dónde está concentrándose tu inversión</li>
+        <li>Detector de fugas de presupuesto — para localizar puntos que pueden estar desperdiciando dinero</li>
+        <li>Análisis de anuncios y oferta — para entender qué puede estar atrayendo tráfico sin suficiente intención</li>
+        <li>Plan de acción de 48 horas — para saber qué deberías priorizar después de la auditoría</li>
+        <li class="bonus">Mapa de Fugas Publicitarias</li>
+        <li class="bonus">Checklist de Campañas Rentables</li>
+        <li class="bonus">Plan de Acción Prioritario</li>
+      </ul>
+      <div class="summary-price">
+        <span>Todo por solo</span>
+        $297 MXN
+      </div>
+      <!-- TODO Diego: reemplaza este href con tu link de checkout/calendario real -->
+      <a href="#checkout-pendiente" class="btn btn--primary" style="width:100%;">Quiero rescatar mi presupuesto</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker kicker--on-light">Preguntas frecuentes</span>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>¿Es práctico y fácil de usar?</h3>
+        <p>Sí. El objetivo es convertir los datos de tus campañas en observaciones y acciones claras, evitando complicar el proceso con información innecesaria.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Necesito experiencia previa en publicidad?</h3>
+        <p>No necesitas ser media buyer. El diagnóstico está pensado para que un dueño de agencia pueda entender qué se está revisando y por qué importa.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cuánto tiempo toma?</h3>
+        <p>La propuesta está estructurada alrededor de un diagnóstico y un plan de acción en un plazo de hasta 48 horas.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Cuándo veré resultados?</h3>
+        <p>La auditoría no puede garantizar un número específico de reservas. Su función es detectar posibles problemas y darte prioridades concretas para optimizar la publicidad.</p>
+      </div>
+      <div class="faq-item">
+        <h3>¿Hay garantía y riesgo cero?</h3>
+        <p>No ofrecemos una garantía de un número específico de reservas — nadie que sea honesto contigo puede prometerte eso. Lo que sí obtienes es un diagnóstico claro de tus campañas y un plan de acción concreto para las próximas 48 horas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CIERRE FINAL ===== -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Deja de pagar por no saber qué está fallando</h2>
+    <p>No necesitas otra campaña.</p>
+    <p>No necesitas otro "gurú".</p>
+    <p>No necesitas seguir aumentando el presupuesto esperando que esta vez funcione.</p>
+    <p class="strong">Primero necesitas saber qué está pasando. Porque mientras no tengas esa respuesta, cada nuevo dólar invertido es una apuesta.</p>
+    <p style="margin-bottom:26px;">Rescate de Ads para Agencias de Viajes convierte tus campañas en algo que puedes analizar, entender y atacar con criterio.</p>
+    <!-- TODO Diego: reemplaza este href con tu link de checkout/calendario real -->
+    <a href="#checkout-pendiente" class="btn btn--primary">Quiero rescatar mi presupuesto ahora</a>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Soy Diego Pozo · <a href="https://instagram.com/soydiegopozo" target="_blank" rel="noopener">@soydiegopozo</a>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
