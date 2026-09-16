@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema NAVE — Guía gratis | Soy Diego Pozo</title>
+<meta name="description" content="Descarga gratis la guía del Sistema NAVE para escalar tus campañas de Meta Ads.">
+
+<!-- Pega aquí tu Meta Pixel -->
+
+<!-- Pega aquí tu Google tag (gtag.js) -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --green:#4CAF17;
+    --green-light:#7ED321;
+    --bg-dark:#0A0D08;
+    --bg-soft:#F2F7ED;
+    --bg-white:#FFFFFF;
+    --text-dark:#12140F;
+    --text-light:#F6F8F3;
+    --muted-dark:#5B6157;
+    --muted-light:#C7D1BE;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Montserrat',sans-serif;
+    background:var(--bg-white);
+    color:var(--text-dark);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:640px;margin:0 auto;padding:0 24px;}
+
+  /* HERO / CAPTURA */
+  .hero{
+    background:var(--bg-dark);
+    color:var(--text-light);
+    padding:64px 0 56px;
+    text-align:center;
+  }
+  .eyebrow{
+    display:inline-block;
+    background:var(--green);
+    color:var(--bg-dark);
+    font-weight:800;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:20px;
+  }
+  h1{
+    font-size:34px;
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:16px;
+    letter-spacing:-.01em;
+  }
+  h1 span{color:var(--green-light);}
+  .subtitle{
+    font-size:17px;
+    font-weight:500;
+    color:var(--muted-light);
+    max-width:480px;
+    margin:0 auto 36px;
+  }
+
+  /* FORM CARD */
+  .form-card{
+    background:var(--bg-white);
+    color:var(--text-dark);
+    border-radius:18px;
+    padding:28px 24px;
+    max-width:420px;
+    margin:0 auto;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    text-align:left;
+  }
+  .form-card h2{
+    font-size:18px;
+    font-weight:800;
+    text-align:center;
+    margin-bottom:4px;
+  }
+  .form-card p.hint{
+    text-align:center;
+    font-size:13px;
+    color:var(--muted-dark);
+    margin-bottom:20px;
+  }
+  label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--muted-dark);
+    margin-bottom:6px;
+    margin-top:14px;
+  }
+  label:first-of-type{margin-top:0;}
+  input{
+    width:100%;
+    font-family:'Montserrat',sans-serif;
+    font-size:16px;
+    font-weight:500;
+    padding:13px 14px;
+    border-radius:10px;
+    border:2px solid #E3E8DD;
+    background:var(--bg-soft);
+    color:var(--text-dark);
+    outline:none;
+    transition:border-color .15s ease;
+  }
+  input:focus{border-color:var(--green);}
+  .btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:var(--green);
+    color:var(--bg-dark);
+    font-family:'Montserrat',sans-serif;
+    font-weight:800;
+    font-size:17px;
+    padding:16px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:22px;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .btn:hover{background:var(--green-light);}
+  .btn:active{transform:scale(.98);}
+  .btn:disabled{opacity:.6;cursor:default;}
+  .form-msg{
+    font-size:13px;
+    text-align:center;
+    margin-top:12px;
+    min-height:16px;
+    color:var(--muted-dark);
+  }
+  .form-msg.error{color:#C0392B;font-weight:700;}
+  .legal{
+    font-size:11px;
+    color:var(--muted-light);
+    text-align:center;
+    max-width:400px;
+    margin:20px auto 0;
+  }
+
+  /* QUE VAS A RECIBIR */
+  .beneficios{
+    background:var(--bg-soft);
+    padding:48px 0;
+  }
+  .beneficios h3{
+    font-size:20px;
+    font-weight:800;
+    text-align:center;
+    margin-bottom:24px;
+  }
+  .beneficios ul{list-style:none;max-width:440px;margin:0 auto;}
+  .beneficios li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:15px;
+    font-weight:600;
+    padding:12px 0;
+    border-bottom:1px solid #E3E8DD;
+  }
+  .beneficios li:last-child{border-bottom:none;}
+  .check{
+    flex-shrink:0;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--green);
+    color:var(--bg-dark);
+    font-size:13px;
+    font-weight:900;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  footer{
+    background:var(--bg-dark);
+    color:var(--muted-light);
+    text-align:center;
+    padding:28px 24px;
+    font-size:12px;
+  }
+  footer a{color:var(--green-light);font-weight:700;}
+
+  @media(min-width:640px){
+    h1{font-size:42px;}
+    .hero{padding:88px 0 72px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">GRATIS · GUÍA PDF</span>
+    <h1>La guía del <span>Sistema NAVE</span> para escalar tus campañas de Meta Ads</h1>
+    <p class="subtitle">Los 4 pasos que uso para llevar una cuenta publicitaria de estancada a rentable. Te la mando directo a tu WhatsApp o correo, gratis.</p>
+
+    <div class="form-card">
+      <h2>Déjame tus datos</h2>
+      <p class="hint">Te lo mando directo por WhatsApp o correo</p>
+
+      <form id="captura-form">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required autocomplete="name">
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+
+        <label for="whatsapp">WhatsApp (con lada, ej. 998...)</label>
+        <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel">
+
+        <button type="submit" class="btn" id="btn-submit">Quiero mi guía gratis</button>
+        <p class="form-msg" id="form-msg"></p>
+      </form>
+
+      <p class="legal">Al enviar aceptas recibir mensajes relacionados con esta oferta. No compartimos tus datos con nadie más.</p>
+    </div>
+  </div>
+</section>
+
+<section class="beneficios">
+  <div class="wrap">
+    <h3>Qué vas a recibir</h3>
+    <ul>
+      <li><span class="check">✓</span><span>Los 4 pasos del Sistema NAVE: Navegar, Alinear, Vender, Escalar</span></li>
+      <li><span class="check">✓</span><span>Cómo saber si tu cuenta está lista para escalar (o no)</span></li>
+      <li><span class="check">✓</span><span>El checklist que reviso antes de subir el presupuesto</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Soy Diego Pozo · <a href="https://instagram.com/soydiegopozo" target="_blank" rel="noopener">@soydiegopozo</a>
+</footer>
+
+<script>
+  // TODO Diego: pega aquí la URL de tu Google Apps Script (termina en /exec)
+  const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzNvlj5LATj5Ba8IE6YmOsGXld5MMrxzqZ7nZFXLlKnD3vpjduy_AwSRIaUNUeyZVb5yA/exec";
+
+  const form = document.getElementById('captura-form');
+  const btn = document.getElementById('btn-submit');
+  const msg = document.getElementById('form-msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (WEBAPP_URL === "PEGA_AQUI_TU_URL_DE_APPS_SCRIPT") {
+      msg.textContent = "Falta conectar el formulario a Google Sheets (ver instrucciones).";
+      msg.classList.add('error');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Enviando...";
+    msg.classList.remove('error');
+    msg.textContent = "";
+
+    const data = new URLSearchParams();
+    data.append('nombre', form.nombre.value);
+    data.append('email', form.email.value);
+    data.append('whatsapp', form.whatsapp.value);
+    data.append('origen', document.referrer || 'directo');
+    data.append('pagina', window.location.href);
+    data.append('fecha', new Date().toISOString());
+
+    // mode: 'no-cors' evita el preflight de CORS que Apps Script no maneja bien.
+    // No podemos leer la respuesta, así que redirigimos por confianza tras el envío.
+    fetch(WEBAPP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: data.toString()
+    })
+      .then(function () {
+        window.location.href = 'gracias.html';
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = "Intentar de nuevo";
+        msg.textContent = "Hubo un problema. Intenta otra vez.";
+        msg.classList.add('error');
+      });
+  });
+</script>
+
+</body>
+</html>
